@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "phone",
+    "precio": 25000,
+    "imagen": "https://cdn.pixabay.com/photo/2014/08/05/10/27/iphone-410311_1280.jpg",
+    "id": 1
+  },
+  {
+    "nombre": "tv",
+    "precio": "50000",
+    "imagen": "https://pixabay.com/get/g25e363d40d5f4ffe7c44f7123b192fef6e2ca662d94c04c50012dbe9b0efced0e0c1574225ebdab895ecc65324ad9ddc657d66aff7b23f91991bb454fb68cc64_640.jpg",
+    "id": 2
+  },
+  {
+    "nombre": "taza",
+    "precio": "2344",
+    "imagen": "http://ss",
+    "id": 3
+  }
+]
