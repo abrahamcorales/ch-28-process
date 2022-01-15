@@ -4,13 +4,21 @@ import productRoute from './routes/productos.js'
 import loginRoute from './routes/login.js'
 import logoutRoute from './routes/logout.js'
 import signupRoute from './routes/signup.js'
+import routeInfo   from './routes/info.js'
+import routeApis   from './routes/api.js'
 import { fileURLToPath } from 'url';
 import session from 'express-session'
 import MongoStore from 'connect-mongo'
 import * as dotenv from 'dotenv'
 import passport from './passport.js'
-dotenv.config()
 import path from 'path'; //! for use __dirname in ECMAScript modules
+import yargs from 'yargs'
+dotenv.config()
+
+/*** yargs ***/
+const argv = yargs(process.argv.slice(2)).argv
+const port = argv.port || 8080
+
 const __filename = fileURLToPath(import.meta.url); //! for use __dirname in ECMAScript modules
 const __dirname = path.dirname(__filename); //! for use __dirname in ECMAScript modules
 const app = express()
@@ -29,7 +37,6 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 
-const port = process.env.PORT || 8080
 
 app.set("views", "./src/views")
 app.set("view engine", "hbs")
@@ -57,6 +64,8 @@ app.use('/login',loginRoute)
 app.use('/signup',signupRoute)
 app.use('/logout',logoutRoute)
 app.use('/productos',productRoute)
+app.use('/info',routeInfo)
+app.use('/api',routeApis)
 
 
 app.listen(port,(error) =>{
