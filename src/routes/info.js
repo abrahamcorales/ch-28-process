@@ -1,5 +1,6 @@
 
 import { Router } from 'express';
+import os from 'os'
 
 let data = {}
 
@@ -14,6 +15,9 @@ routes.get('/',(req,res) =>{
     data['exec_path'] = process.execPath
     data['process_id'] = process.pid
     data['project_folder'] = process.cwd()
+    data['project_folder'] = process.cwd()
+    data['total_cpu'] = os.cpus().length
+
     res.send(data)
 })
 

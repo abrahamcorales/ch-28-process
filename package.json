@@ -5,9 +5,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node src/app.js --port 8090",
-    "dev": "nodemon src/app.js --port 8090"
+    "start": "pm2 start src/app.js -i max -- --port 8090 --mode FORK",
+    "fork": "node src/app.js --port 8090 --mode FORK",
+    "dev": "nodemon src/app.js --port 8080 --mode CLUSTER"
   },
   "engines": {
     "node": ">=14.0.0"
